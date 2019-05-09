@@ -1,0 +1,48 @@
+<details open="open">
+    <summary class="caption">Random score</summary>      
+    <a href="about.html">About Music Randomizer</a>
+    <div id="chordPractice" class="option">
+        <h2>Chords</h2>
+        <div class="optionElement">
+            <h3>Practice staves</h3>            
+            <input class="numberInput" type="text" [(ngModel)]="practiceStaveCount" placeholder="Stave count" required="required" pattern="[0-9]{1,2}" /> 
+        </div>                
+        <div class="optionElement">
+            <h3>Key signature</h3>
+            <select [(ngModel)]="keySignature">
+                <option *ngFor="let signature of keySignatureList" [ngValue]="signature.value">{{signature.description}}</option>                
+            </select>
+        </div>                                
+        <div class="optionElement">
+        <h3>Clef</h3>
+            <select [(ngModel)]="clef" (change)="onClefChange()">
+                <option *ngFor="let clefType of clefTypeList" [ngValue]="clefType.value">{{clefType.description}}</option>                                
+            </select>                     
+            <div id="chordGrandStaffBassOptionBlock" *ngIf="showGrandStaffBassOption">
+                <h4>Grand staff options</h4>
+                <input type="radio" [(ngModel)]="grandStaffBassOption" name="chordGrandStaffBassOption" id="chordGrandStaffBassOptionDouble" value="double" /><label for="chordGrandStaffBassOptionDouble">Same chords for both hands</label><br /> <!-- name="chordGrandStaffBassOption" id="chordGrandStaffBassOptionDouble"  -->
+                <input type="radio" [(ngModel)]="grandStaffBassOption" name="chordGrandStaffBassOption" id="chordGrandStaffBassOptionDifferent" value="different" /><label for="chordGrandStaffBassOptionDifferent">Different chords for both hands</label><br /> <!--name="chordGrandStaffBassOption" id="chordGrandStaffBassOptionDifferent"-->                        
+            </div>                
+        </div>
+        <div class="optionElement">
+            <h3>Chords</h3>
+            <h4>Size range</h4>            
+            <div class="slider">
+              <nouislider id="chordChordSize" [config]="sliderConfig" [(ngModel)]="sliderRange"></nouislider>
+            </div>                
+            <br />
+            <br />
+            <h4>Type</h4>
+            <input type="radio" [(ngModel)]="melodicHarmonic" name="chordMelodicHarmonic" value="{{chordType.Harmonic}}" id="chordHarmonic" /><label for="chordHarmonic">Harmonic chords</label><br />                
+            <input type="radio" [(ngModel)]="melodicHarmonic" name="chordMelodicHarmonic" value="{{chordType.Melodic}}" id="chordMelodic" /><label for="chordMelodic">Melodic chords</label><br />
+            <input type="checkbox" [(ngModel)]="inversions" name="chordInversions" id="chordInversions" /><label for="chordInversions">Inversions</label><br />
+            <br />
+            <h4>Omit lesser used notes from chords</h4>
+            <input type="radio" [(ngModel)]="omitNotes" name="chordOmitNotes" value="{{trueFalseRandom.True}}" id="chordOmitNotesYes" /><label for="chordOmitNotesYes">Yes</label><br />
+            <input type="radio" [(ngModel)]="omitNotes" name="chordOmitNotes" value="{{trueFalseRandom.False}}" id="chordOmitNotesNo" /><label for="chordOmitNotesNo">No</label><br />
+            <input type="radio" [(ngModel)]="omitNotes" name="chordOmitNotes" value="{{trueFalseRandom.Random}}" id="chordOmitNotesRandom" /><label for="chordOmitNotesRandom">Random</label><br />                
+        </div>                                
+        <button (click)="makeChords()"><img src="assets/icon/icon_play.png" alt="Make" /></button> <button (click)="resetSelections()"><img src="assets/icon/icon_cross.png" alt="Reset" /></button> <br/>
+    </div>                                    
+</details>
+<div id="{{scoreDiv}}"></div>

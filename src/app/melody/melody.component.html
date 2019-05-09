@@ -1,0 +1,48 @@
+<details open="open">
+    <summary class="caption">Random score</summary>      
+    <a href="about.html">About Music Randomizer</a>
+    <div id="chordPractice" class="option">
+        <h2>Melody & harmony</h2>
+        <div class="optionElement">
+            <h3>Practice staves</h3>            
+            <input class="numberInput" type="text" [(ngModel)]="practiceStaveCount" placeholder="Stave count" required="required" pattern="[0-9]{1,2}" /> 
+        </div>                
+        <div class="optionElement">
+            <h3>Key</h3>
+            <select [(ngModel)]="keySignature"> 
+                <option *ngFor="let key of keylist" value="{{key.id}}">{{key.description}}</option>
+
+            </select>            
+        </div>
+        <!-- <div class="optionElement"> -->
+            <!--
+            <h3>Clef</h3>
+            <select [(ngModel)]="clef" (change)="onClefChange()">
+                <option *ngFor="let clefType of clefTypeList" [ngValue]="clefType.value">{{clefType.description}}</option>                                
+            </select>                     
+            -->
+            <div class="optionElement">
+                <h3>Melody hand</h3>
+                <input type="radio" [(ngModel)]="grandStaffMelodyHand" id="grandStaffMelodyHandRight" value="right" name="grandStaffMelodyHand" /><label for="grandStaffMelodyHandRight">Right</label><br /> <!-- name="chordGrandStaffBassOption" id="chordGrandStaffBassOptionDouble"  -->
+                <input type="radio" [(ngModel)]="grandStaffMelodyHand" id="grandStaffMelodyHandLeft" value="left" name="grandStaffMelodyHand" /><label for="grandStaffMelodyHandLeft">Left</label><br /> <!--name="chordGrandStaffBassOption" id="chordGrandStaffBassOptionDifferent"-->                        
+                <!--
+                <h4>Harmonization type</h4>
+                <div *ngFor="let harmonization of harmonizationTypes">
+                    <input type="radio" [(ngModel)]="harmonizationType" id="harmonization{{harmonization.value}}" name="harmonization{{harmonization.value}}" [value]="harmonization.value" /><label for="harmonization{{harmonization.value}}">{{harmonization.description}}</label><br />
+                </div>
+                -->
+            </div>
+            <div class="optionElement">
+                <h3>Difficulty</h3>
+                <div class="slider" style="height:4em">
+                    <nouislider id="difficulty" [config]="sliderConfig" [(ngModel)]="difficulty"></nouislider><br />                    
+                </div> 
+                <div style="height:4em">
+                    {{difficulty | melodyDifficultyDescription}}
+                </div>
+            </div>                
+        <!-- </div> -->
+        <button (click)="makeMelody()"><img src="assets/icon/icon_play.png" alt="Make" /></button> <button (click)="resetSelections()"><img src="assets/icon/icon_cross.png" alt="Reset" /></button>        
+    </div>                                        
+</details>
+<div id="{{scoreDiv}}"></div>

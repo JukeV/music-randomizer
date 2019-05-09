@@ -1,0 +1,153 @@
+// http://ionicframework.com/docs/theming/
+/*
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+*/
+@import "~nouislider/distribute/nouislider.min.css";
+
+
+body
+{
+    color: #002140;
+}
+
+h2
+{
+    color: #0086FF;
+}
+
+h3
+{
+    margin: 0em;
+    color: #0064BF;
+}
+
+h4
+{
+    margin: 0em;
+    color: #00437F;
+}
+
+input[type="text"].numberInput {
+    width: 25px;    
+}
+
+div.MusicArea{
+    width:1000px;
+    height: 500px;
+}
+
+div.Tabbed
+{
+    padding-left:2.00em;
+}
+
+div.TestArea{
+    width: 600px;
+    height: 100px;
+}
+
+div.option
+{
+    background-color: #F0F0F0;
+    max-width: 20em;
+    box-shadow: 7px 7px 7px #E0E0E0;
+}
+
+div.slider
+{
+    /* max-width: 150px; */      
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+div.optionElement
+{
+    border-style: solid;
+    border-width: 1px;
+    border-color: #D0D0D0;      
+    background-color: #F7F7F7
+}
+
+summary.caption
+{
+    text-align: center;
+    font-size: 2.5em;
+}
+
+button
+{
+    background-color: #F0F0F0;    
+}
+
+button.navigation {
+    border-style: solid;
+    border-width: 1px;
+    /*
+    border: 0;
+    border-radius: 0px;
+    */
+    background: none;    
+    box-shadow: none;    
+    box-shadow: 7px 7px 7px #E0E0E0;
+    background-color: #F0F0F0;    
+    font-size: 1.5em;
+}
+
+ section.range-slider {
+    position: relative;
+    width: 200px;
+    height: 35px;
+    text-align: center;
+}
+
+section.range-slider input {
+    pointer-events: none;
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    top: 15px;
+    width: 200px;
+    outline: none;
+    height: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+section.range-slider input::-webkit-slider-thumb {
+    pointer-events: all;
+    position: relative;
+    z-index: 1;
+    outline: 0;
+}
+
+section.range-slider input::-moz-range-thumb {
+    pointer-events: all;
+    position: relative;
+    z-index: 10;
+    -moz-appearance: none;
+    width: 9px;
+}
+
+section.range-slider input::-moz-range-track {
+    position: relative;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 1);
+    border: 0;
+}
+section.range-slider input:last-of-type::-moz-range-track {
+    -moz-appearance: none;
+    background: none transparent;
+    border: 0;
+}
+  section.range-slider input[type=range]::-moz-focus-outer {
+  border: 0;
+}

@@ -39,5 +39,3 @@ Use your preferred development tools, or if unsure, use [Visual studio code](htt
 ## License
 This project is licensed under the MIT License
 
-## Authors
-* **Jukka Viherpelto** - *Initial work* - [JukeV](https://github.com/JukeV)

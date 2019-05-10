@@ -37,5 +37,5 @@ For mobile/Ionic deployment, refer to [Ionic documentation](https://ionicframewo
 Use your preferred development tools, or if unsure, use [Visual studio code](https://code.visualstudio.com/download)
 
 ## License
-This project is licensed under the MIT License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 

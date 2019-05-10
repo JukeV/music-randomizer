@@ -33,6 +33,9 @@ ng build --prod
 
 For mobile/Ionic deployment, refer to [Ionic documentation](https://ionicframework.com/docs/building/running)
 
+### Development
+Use your preferred development tools, or if unsure, use [Visual studio code](https://code.visualstudio.com/download)
+
 ## License
 This project is licensed under the MIT License
 
